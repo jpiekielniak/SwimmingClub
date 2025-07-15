@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<form method="POST" action="{{ url }}">
+    
+    <label for="{{ select_id }}">Proszę wybrać {{ select_text }}:</label> 
+
+    <select name="{{ select_id }}" id="{{ select_id }}">
+
+        {% for name in data %}
+            <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+    
+   
+    </select>
+
+    <p>
+        <input type="submit" value="Wybierz">
+    </p>
+ 
+</form>
+ 
+{% endblock %}
